@@ -1,110 +1,36 @@
-<!DOCTYPE html><html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Personal Website</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #ffffff;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }.card {
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  padding: 30px 40px;
-  width: 90%;
-  max-width: 420px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  backdrop-filter: blur(10px);
+import Image from 'next/image'
+
+export default function Home() {
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-center p-6 bg-gray-50">
+      <div className="bg-white rounded-2xl shadow-lg p-10 max-w-md w-full text-center">
+        {/* Profile Photo */}
+        <div className="relative w-32 h-32 mx-auto mb-6">
+          <Image
+            src="/profile.jpg" // replace with your photo in public folder
+            alt="Profile Photo"
+            fill
+            className="rounded-full object-cover"
+          />
+        </div>
+
+        {/* Personal Info */}
+        <h1 className="text-3xl font-bold mb-2">Divakar</h1>
+        <p className="text-gray-600 mb-4">Age: 16 | Height: 5'9"</p>
+
+        {/* Contact Button */}
+        <a
+          href="mailto:diwakernayyer@gmail.com"
+          className="inline-block bg-blue-600 text-white px-6 py-2 rounded-full font-medium hover:bg-blue-700 transition"
+        >
+          Contact Me
+        </a>
+      </div>
+
+      {/* Footer */}
+      <footer className="mt-10 text-gray-500 text-sm">
+        © {new Date().getFullYear()} Divakar. All rights reserved.
+      </footer>
+    </main>
+  )
 }
-
-.photo {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid rgba(255,255,255,0.6);
-  margin-bottom: 15px;
-}
-
-h1 {
-  margin: 10px 0 5px;
-  font-size: 28px;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-size: 14px;
-  opacity: 0.8;
-  margin-bottom: 25px;
-}
-
-.info {
-  text-align: left;
-  margin-top: 20px;
-}
-
-.info p {
-  margin: 12px 0;
-  font-size: 16px;
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  padding-bottom: 6px;
-}
-
-.label {
-  opacity: 0.7;
-}
-
-.value {
-  font-weight: bold;
-}
-
-footer {
-  margin-top: 25px;
-  font-size: 12px;
-  opacity: 0.6;
-}
-
-  </style>
-</head>
-<body>
-  <div class="card"><!-- Add your photo file name here -->
-<img src="myphoto.jpg" alt="My Photo" class="photo" />
-
-<h1>Divakar</h1>
-<div class="subtitle">Personal Profile</div>
-
-<div class="info">
-  <p>
-    <span class="label">Name</span>
-    <span class="value">Divakar</span>
-  </p>
-  <p>
-    <span class="label">Age</span>
-    <span class="value">16 years</span>
-  </p>
-  <p>
-    <span class="label">Height</span>
-    <span class="value">5'8"</span>
-  </p>
-  <p>
-    <span class="label">Gmail</span>
-    <span class="value">yourname@gmail.com</span>
-  </p>
-</div>
-
-<footer>
-  © 2026 • My Personal Website
-</footer>
-
-  </div>
-</body>
-</html>
